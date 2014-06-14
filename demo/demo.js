@@ -1,4 +1,4 @@
-var csscolormin = require('../index.js');
+var csscolormin = require('../index.js').min;
 
 min = function(color) {
   return csscolormin(color);

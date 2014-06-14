@@ -1,4 +1,4 @@
-var min = require('../index.js');
+var min = require('../index.js').min;
 var assert = require('assert');
 
 assert.equal(min("white"), "#fff");
