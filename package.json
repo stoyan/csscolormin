@@ -1,6 +1,6 @@
 {
   "name": "csscolormin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Minify CSS colors",
   "keywords": [
     "css",
@@ -13,7 +13,8 @@
     "url": "git://github.com/stoyan/csscolormin.git"
   },
   "dependencies": {
-    "color": "*"
+    "color": "*",
+    "color-string": "*"
   },
   "main": "index"
 }
