@@ -16,18 +16,19 @@ exports.min = function min(c) {
     var colour = color(c);
   }
   var alpha = colour.values.alpha;
-  
-  if (alpha === 0) {
+  var rgb = colour.values.rgb;
+
+  if (rgb[0] === 0 && rgb[1] === 0 && rgb[2] === 0 && alpha === 0) {
     return 'transparent';
   }
-  
-  if (alpha && alpha !== 1) {
+
+  if (alpha !== 1) {
     // no choice, gotta be rgba
     if (alpha < 1) {
       alpha = String(alpha).replace('0.', '.');
     }
     return string
-      .rgbaString(colour.values.rgb, alpha)
+      .rgbaString(rgb, alpha)
       .replace(/ /g, '')
       .toLowerCase();
   }
