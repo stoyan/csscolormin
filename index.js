@@ -1,47 +1,43 @@
 var color = require("color");
 var string = require("color-string");
+var names = require("color-name");
+
+var reverseNames = {};
+for (var key in names) {
+  if (names.hasOwnProperty(key)) {
+    reverseNames[names[key]] = key;
+  }
+}
 
 exports.min = function min(c) {
 
-  if (Array.isArray(c)) {
-    var colour = color({
-      r: c[0],
-      g: c[1],
-      b: c[2],
-    });
-    if ('3' in c) {
-      colour.alpha(c[3]);
-    }
-  } else {
-    var colour = color(c);
-  }
-  var alpha = colour.values.alpha;
-  var rgb = colour.values.rgb;
+  var colour = color(c);
+  var alpha = colour.alpha() || 0;
+  var rgb = colour.rgb().array();
 
   if (rgb[0] === 0 && rgb[1] === 0 && rgb[2] === 0 && alpha === 0) {
     return 'transparent';
   }
 
   if (alpha !== 1) {
-    // no choice, gotta be rgba
-    if (alpha < 1) {
-      alpha = String(alpha).replace('0.', '.');
-    }
-    return string
-      .rgbaString(rgb, alpha)
+    return string.to.rgb(rgb, alpha)
       .replace(/ /g, '')
+      .replace('0.', '.')
       .toLowerCase();
   }
 
   // hex, short hex, or keyword
-  var hex = colour.hexString();
+  var hex = colour.hex();
+  var word = reverseNames[colour.rgb().color];
+
   if (hex[1] === hex[2] && hex[3] === hex[4] && hex[5] === hex[6]) {
     hex = ['#', hex[1], hex[3], hex[5]].join('');
   }
-  var word = colour.keyword();
+
   if (!word || hex.length < word.length) {
     return hex.toLowerCase();
   }
+
   return word.toLowerCase();
 };
 

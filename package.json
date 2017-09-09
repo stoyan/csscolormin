@@ -12,9 +12,11 @@
     "type": "git",
     "url": "git://github.com/stoyan/csscolormin.git"
   },
+  "scripts": {
+    "test": "node test/test.js"
+  },
   "dependencies": {
-    "color": "*",
-    "color-string": "^0.4.0"
+    "color": "2.0.0"
   },
   "main": "index"
 }

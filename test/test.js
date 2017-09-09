@@ -16,6 +16,6 @@ assert.equal(min("goldenrod"), "#daa520");
 assert.equal(min([255, 0,   0, 1]), "red");
 assert.equal(min([0, 0, 0, 0]), "transparent");
 assert.equal(min([255, 127, 0]), "#ff7f00");
-assert.equal(min({r: 0, g: 0, b: 255, a: 0.5}), "rgba(0,0,255,.5)");
+assert.equal(min({r: 0, g: 0, b: 255, alpha: 0.5}), "rgba(0,0,255,.5)");
 
 console.log('all good!');
