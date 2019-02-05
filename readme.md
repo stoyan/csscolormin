@@ -29,15 +29,13 @@ plus an rgb/rgba array.
 Examples:
 
 ```js
-var min = require('csscolormin');
+const min = require('csscolormin');
 min("white");
 min("rgb(0, 0, 0)");
 min("rgba(0, 0, 0, 0)");
 min("hsl(0, 0, 0)");
 min("hsla(0, 0, 0, 0)");
 min("#bbaadd");
-min([0, 0, 0, 0]);
-min({r: 0, g: 0, b: 0, a: 50%});
 ```
 
 Some more examples and returned values:
@@ -55,10 +53,6 @@ min("rgba(10, 30, 25, 0)"); // "transparent"
 min("hsl(120, 50%, 60%)"); // "#6c6"
 min("blue"); // "blue"
 min("goldenrod"); // "#daa520"
-min([255, 0,   0, 1]); // "red"
-min([255, 127, 0, 0]); // "transparent"
-min([255, 127, 0]); // "#ff7f00"
-min({r: 0, g: 0, b: 255, a: 0.5}); // "rgba(0,0,255,.5)"
 ```
 
 ## More

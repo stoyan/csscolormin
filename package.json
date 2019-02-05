@@ -1,11 +1,12 @@
 {
   "name": "csscolormin",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Minify CSS colors",
   "keywords": [
     "css",
     "transform",
-    "color"
+    "color",
+    "minify"
   ],
   "author": "Stoyan <ssttoo@ymail.com>",
   "repository": {
@@ -13,8 +14,10 @@
     "url": "git://github.com/stoyan/csscolormin.git"
   },
   "dependencies": {
-    "color": "*",
-    "color-string": "^0.4.0"
+    "color": "^3.1.0",
+  },
+  "devDependencies": {
+    "microbundle": "^0.9.0"
   },
   "main": "index"
 }

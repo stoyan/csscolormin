@@ -1,1 +1,1 @@
-browserify demo.js -o bundle.js
+microbundle demo.js -o bundle.js --sourcemap false --format cjs
